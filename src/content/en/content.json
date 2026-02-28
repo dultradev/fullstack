@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "leadership": "Leadership",
+    "projects": "Projects",
+    "ambitions": "Goals",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "I build context-driven software with focus on automation, data, and real user outcomes.",
+    "ctaProjects": "See projects",
+    "ctaContact": "Get in touch"
+  },
+  "sectionTitles": {
+    "about": "About Me",
+    "experience": "Experience",
+    "leadership": "Leadership and Community",
+    "projects": "Featured Projects",
+    "ambitions": "Career Ambitions",
+    "contact": "Let's talk"
+  },
+  "experiences": [
+    {
+      "id": "isi-sas",
+      "role": "Software Solutions Research Fellow",
+      "org": "ISI-SAS (SENAI Institute for Advanced Health Systems)",
+      "startDate": "2025-09",
+      "highlights": [
+        "Designed architectural solution proposals to reduce manual workflows.",
+        "Implemented process automation opportunities across technical operations.",
+        "Structured data visualization and analysis workflows to support management decisions.",
+        "Contributed to a laboratory reagent inventory control system proposal aligned with GLP and GAMP, currently in budget validation for MVP development."
+      ]
+    }
+  ],
+  "leadership": [
+    {
+      "id": "aws-cloud-club",
+      "title": "Tools and Services Lead",
+      "org": "AWS Cloud Club - SENAI CIMATEC",
+      "startDate": "2026-01",
+      "highlights": [
+        "Leading the tools and services technical front for a student cloud community.",
+        "Built and supported a community with 100+ members, targeting 2x growth over the year.",
+        "Designed a 25-student mentoring cohort for AWS Cloud Foundations.",
+        "Targeting 100% course completion in the mentoring cohort and 50% certification exam attempt rate."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "dj-management-platform",
+      "title": "DJ Management Platform",
+      "problem": "Event operations were fragmented, making financial control, scheduling, recurrence analysis, and contact management difficult.",
+      "solution": "Built a platform with structured event records, Google Maps integration for location data, detailed financial tracking, YouTube API metrics, and a Kanban workflow for video operations.",
+      "tech": ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS", "Google Maps API", "YouTube API", "Supabase"],
+      "impact": "Centralized operational and financial data into one system, improving visibility and execution quality.",
+      "link": "https://github.com/mec-hub/ritm-finance-flow?tab=readme-ov-file"
+    },
+    {
+      "id": "odontomidweb",
+      "title": "OdontoMidWeb",
+      "problem": "The previous pricing solution for dental clinics was spreadsheet-based with limited structure and user guidance.",
+      "solution": "Rebuilt the experience as a web app with guided input flow, scenario comparison, dashboards, spreadsheet import/export, and protected fields to reduce user errors.",
+      "tech": ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      "impact": "Increased product value perception and enabled more data-driven pricing decisions.",
+      "link": "https://github.com/dultradev/OdontoMidWeb",
+      "visibilityNote": "Commercial product: public usage and demo access are not available."
+    }
+  ],
+  "contact": {
+    "intro": "If you are building a software solution that needs technical rigor and practical impact, I would be glad to collaborate.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitLabel": "Send message",
+    "successMessage": "Message sent successfully.",
+    "errorMessage": "Unable to send now. Please try again shortly."
+  }
+}

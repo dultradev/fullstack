@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiências",
+    "leadership": "Liderança",
+    "projects": "Projetos",
+    "ambitions": "Objetivos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "subtitle": "Desenvolvo software orientado a contexto, com foco em automação, dados e experiência real de uso.",
+    "ctaProjects": "Ver projetos",
+    "ctaContact": "Entrar em contato"
+  },
+  "sectionTitles": {
+    "about": "Sobre Mim",
+    "experience": "Experiências",
+    "leadership": "Liderança e Comunidade",
+    "projects": "Projetos em Destaque",
+    "ambitions": "Ambições de Carreira",
+    "contact": "Vamos conversar"
+  },
+  "experiences": [
+    {
+      "id": "isi-sas",
+      "role": "Bolsista em Soluções de Software",
+      "org": "ISI-SAS (Instituto SENAI de Sistemas Avançados de Saúde)",
+      "startDate": "2025-09",
+      "highlights": [
+        "Atuação na proposição de soluções arquiteturais para reduzir fluxos manuais.",
+        "Automatização de processos operacionais e técnicos.",
+        "Estruturação de visualização e análise de dados para facilitar gestão e tomada de decisão.",
+        "Participação em proposta de sistema de controle de estoque de reagentes com foco em BPL e GAMP, em validação de orçamento para MVP."
+      ]
+    }
+  ],
+  "leadership": [
+    {
+      "id": "aws-cloud-club",
+      "title": "Líder de Ferramentas e Serviços",
+      "org": "AWS Cloud Club - SENAI CIMATEC",
+      "startDate": "2026-01",
+      "highlights": [
+        "Liderança da frente técnica de ferramentas e serviços da comunidade estudantil.",
+        "Comunidade ativa com mais de 100 membros e meta de dobrar ao longo do ano.",
+        "Planejamento de turma de monitoria com 25 pessoas para AWS Cloud Foundations.",
+        "Meta de 100% de conclusão na turma e 50% dos participantes realizando prova de certificação."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "dj-management-platform",
+      "title": "Plataforma de Gestão para DJ",
+      "problem": "A operação de eventos era descentralizada e dificultava controle financeiro, agenda, recorrência e gestão de contatos.",
+      "solution": "Desenvolvimento de plataforma com cadastro de eventos, integração com Google Maps para localização, gestão financeira detalhada e integração com YouTube API para métricas, além de fluxo Kanban para produção de conteúdo.",
+      "tech": ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS", "Google Maps API", "YouTube API", "Supabase"],
+      "impact": "Centralizou dados operacionais e financeiros em um único ambiente, melhorando organização e visibilidade de resultados.",
+      "link": "https://github.com/mec-hub/ritm-finance-flow?tab=readme-ov-file"
+    },
+    {
+      "id": "odontomidweb",
+      "title": "OdontoMidWeb",
+      "problem": "A solução anterior de precificação para clínicas odontológicas era baseada em planilha com experiência limitada e pouco estruturada.",
+      "solution": "Transformação do processo em aplicação web com fluxo guiado, comparação entre cenários, dashboard com gráficos, importação/exportação por planilha e proteção de entradas para reduzir erros.",
+      "tech": ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      "impact": "Elevou valor percebido do produto e apoiou decisões financeiras com dados mais claros e acionáveis.",
+      "link": "https://github.com/dultradev/OdontoMidWeb",
+      "visibilityNote": "Produto comercializado: uso e demonstração pública do sistema não estão disponíveis."
+    }
+  ],
+  "contact": {
+    "intro": "Se você quer construir uma solução sólida, com foco em contexto real e impacto mensurável, vamos conversar.",
+    "nameLabel": "Nome",
+    "emailLabel": "E-mail",
+    "messageLabel": "Mensagem",
+    "submitLabel": "Enviar mensagem",
+    "successMessage": "Mensagem enviada com sucesso.",
+    "errorMessage": "Não foi possível enviar agora. Tente novamente em instantes."
+  }
+}

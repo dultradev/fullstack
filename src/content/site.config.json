@@ -1,0 +1,20 @@
+{
+  "name": "Rian Albert dos Santos Dultra",
+  "title": {
+    "pt-BR": "Bolsista em Soluções de Software | Líder de Ferramentas e Serviços na AWS Cloud Club",
+    "en": "Software Solutions Research Fellow | AWS Cloud Club Tools and Services Lead"
+  },
+  "education": {
+    "pt-BR": "Engenharia da Computação (em andamento, 6º semestre - 2026.1), SENAI CIMATEC",
+    "en": "Computer Engineering (ongoing, 6th semester - 2026.1), SENAI CIMATEC"
+  },
+  "heroQuote": {
+    "pt-BR": "Meu objetivo é desenvolver a melhor solução que atenda a sua realidade",
+    "en": "My goal is to build the best solution for your real-world context"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/rian-albert-dos-santos-dultra-898318288",
+    "github": "https://github.com/dultradev",
+    "email": "rian.albert.dultra@gmail.com"
+  }
+}

@@ -1,0 +1,23 @@
+:root {
+  --bg-primary: #06080d;
+  --bg-secondary: #0f1524;
+  --bg-card: #0f1828cc;
+  --text-primary: #f5f7fb;
+  --text-muted: #b8c1d9;
+  --accent: #71d7ff;
+  --accent-strong: #2eb8ea;
+  --border-soft: #d9e1ff24;
+  --ok: #78e0a1;
+  --error: #ff8f8f;
+  --radius: 18px;
+  --shadow-soft: 0 20px 45px -28px #000000f2;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+  --space-8: 6rem;
+  --max-width: 1120px;
+}
