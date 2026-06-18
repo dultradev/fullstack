@@ -210,7 +210,7 @@ Análise Comparativa de Ferramentas de Simulação
 | **Ansys RF Channel Modeler**  | Licença Comercial Corporativa.  | Simulação eletromagnética de alta fidelidade física baseada no solver HFSS SBR+.  | SIL eletromagnético avançado para sensores e antenas.  | Permite a modelagem realista em tempo quase real de assinaturas complexas de radares e atenuações de C2 Link acelerada por GPUs corporativas.  |
 | **BlueSky (TU Delft)**  | Open-source (Python).  | Simulação simplificada de tráfego aéreo de média fidelidade com alto foco em capacidade e fluxo.  | SIL em larga escala de simulação rápida em tempo acelerado de redes aéreas federadas.  | Utilizado como o core de validação de projetos regulatórios europeus (SESAR) para testar conformidade com padrões de deconfliction da ASTM.  |
 
-6. Conclusões e Recomendações Comerciais 
+# 6. Conclusões e Recomendações Comerciais
 
 A validação rigorosa de cada parâmetro de entrada nos simuladores de tráfego de UAS é fundamental para habilitar o desenvolvimento de modelos comerciais economicamente sustentáveis e seguros de mobilidade aérea. A análise detalhada da engenharia de simulação indica as seguintes diretrizes para empresas e proponentes operacionais de UAS:
 
