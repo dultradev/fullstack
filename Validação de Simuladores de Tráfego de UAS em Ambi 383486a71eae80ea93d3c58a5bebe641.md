@@ -73,7 +73,9 @@ Para cumprir a equivalência técnica com o requisito clássico "see and avoid" 
 
 A norma RTCA DO-365 estabelece os requisitos mínimos de desempenho de sistemas DAA para UAS. O sistema de alerta integrado à lógica de controle DAA processa os sinais dos sensores para classificar os níveis de risco de aproximação de alvos intrusos com base na coordenada de tempo restante para a penetração do volume geométrico do perigo ($t_{HAZ}$):
 
-$\text{Alertas DAA (DO-365)} \Longrightarrow \begin{cases} \text{Preventivo:} & \text{Alerta de longo prazo; melhora da consciência situacional.} \\ \text{Corretivo:} & \text{Exige ação planejada do piloto para manter o Well Clear.} \\ \text{Advertência (Warning):} & \text{Perigo iminente; exige desvio tático imediato.} \end{cases}$
+$$
+\text{Alertas DAA (DO-365)} \Longrightarrow \begin{cases} \text{Preventivo:} & \text{Alerta de longo prazo; melhora da consciência situacional.} \\ \text{Corretivo:} & \text{Exige ação planejada do piloto para manter o Well Clear.} \\ \text{Advertência (Warning):} & \text{Perigo iminente; exige desvio tático imediato.} \end{cases}
+$$
 
 A parametrização dessas lógicas de alerta é frequentemente avaliada em simulação de tempo acelerado de encontros aéreos par a par para estabelecer limites seguros de alertas precoces e tardios sem que ocorra a ativação indevida ou excesso de falsos alarmes.
 
@@ -83,7 +85,9 @@ Enquanto a norma RTCA DO-365 aborda UAS de grande porte sob regras de voo por in
 
 A ASTM F3442 define a zona protetora padrão conhecida como *Remain Well Clear* (RWC) baseada em uma volumetria cilíndrica de proteção em formato de "disco de hóquei" centralizada na própria aeronave:
 
-$\text{Volume de Proteção Cilíndrico (ASTM F3442)} \Longrightarrow \begin{cases} \text{Separação Horizontal Mínima:} & \text{2.000 pés } \approx 610 \text{ metros} \\ \text{Separação Vertical Mínima:} & \text{250 pés } \approx 76 \text{ metros} \end{cases}$
+$$
+\text{Volume de Proteção Cilíndrico (ASTM F3442)} \Longrightarrow \begin{cases} \text{Separação Horizontal Mínima:} & \text{2.000 pés } \approx 610 \text{ metros} \\ \text{Separação Vertical Mínima:} & \text{250 pés } \approx 76 \text{ metros} \end{cases}
+$$
 
 A simulação e validação do sistema DAA sob o critério ASTM F3442 devem demonstrar estatisticamente que a taxa de risco de colisão aérea (MAC) é severamente mitigada por meio do monitoramento de alcance contínuo do sensor e da execução precisa das curvas de desvio horizontal e vertical do piloto automático.
 
