@@ -1,5 +1,8 @@
 # 🚀 Apache Kafka — Benchmark & Relatório de Engenharia
 
+![Apache Kafka](https://shields.io)
+
+
 [![Broker](https://img.shields.io/badge/Broker-Apache%20Kafka%20(KRaft)-black?style=for-the-badge&logo=apachekafka)](https://kafka.apache.org/)
 [![Python](https://img.shields.io/badge/Client-confluent--kafka%20(librdkafka)-blue?style=for-the-badge&logo=python)](https://github.com/confluentinc/confluent-kafka-python)
 [![Docker](https://img.shields.io/badge/Environment-Docker%20Compose%20(2%20CPUs%20%7C%202GB%20RAM)-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com/)
