@@ -1,6 +1,5 @@
-<img src="https://cdn.simpleicons.org/apachekafka/white" alt="Apache Kafka Logo" width="40" height="40" />
+# <img src="https://cdn.simpleicons.org/apachekafka/231F20/white" height="32" align="center" /> Apache Kafka — Benchmark & Relatório de Engenharia
 
-# Apache Kafka — Benchmark & Relatório de Engenharia
 
 ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
 <img src="https://cdn.simpleicons.org/apachekafka/white" alt="Apache Kafka Logo" width="40" height="40" />
