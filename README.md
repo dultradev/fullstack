@@ -7,7 +7,7 @@
 ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-00000000?style=for-the-badge&logo=apachekafka&logoColor=white)
 ![Apache Kafka](https://img.shields.io/badge/-%20-00000000?style=flat&logo=apachekafka&logoColor=white)
 
-[![Broker](https://img.shields.io/badge/Broker-Apache%20Kafka%20(KRaft)-black?style=for-the-badge&logo=apachekafka)](https://kafka.apache.org/)
+[![Broker](https://img.shields.io/badge/Broker-Apache%20Kafka%20(KRaft)-black?style=for-the-badge&logo=apachekafka)]([https://kafka.apache.org/](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white))
 [![Python](https://img.shields.io/badge/Client-confluent--kafka%20(librdkafka)-blue?style=for-the-badge&logo=python)](https://github.com/confluentinc/confluent-kafka-python)
 [![Docker](https://img.shields.io/badge/Environment-Docker%20Compose%20(2%20CPUs%20%7C%202GB%20RAM)-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com/)
 [![Status](https://img.shields.io/badge/Validation-100%25%20Passed-brightgreen?style=for-the-badge&logo=checkmarx)](https://github.com/)
