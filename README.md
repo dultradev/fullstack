@@ -157,7 +157,8 @@ Etapa 1 executada com sucesso!
 
 ### 1. Relevância Crítica do `auto.offset.reset: earliest`
 
-> [!NOTE] No Apache Kafka, se um novo *Consumer Group* for inicializado **após** a publicação de uma mensagem sem a configuração explícita de `auto.offset.reset: earliest`, o cliente adotará por padrão a estratégia `latest`. Nesse cenário, o consumidor posiciona seu ponteiro no final atual da partição (*High Watermark*) e aguarda apenas eventos futuros, ignorando completamente todo o histórico prévio. O uso de `earliest` garante a leitura determinística a partir do offset `0`.
+> [!NOTE]
+> No Apache Kafka, se um novo *Consumer Group* for inicializado **após** a publicação de uma mensagem sem a configuração explícita de `auto.offset.reset: earliest`, o cliente adotará por padrão a estratégia `latest`. Nesse cenário, o consumidor posiciona seu ponteiro no final atual da partição (*High Watermark*) e aguarda apenas eventos futuros, ignorando completamente todo o histórico prévio. O uso de `earliest` garante a leitura determinística a partir do offset `0`.
 
 ### 2. Injeção de Rastreabilidade nos Metadados (Headers Nativos)
 
