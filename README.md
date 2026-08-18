@@ -1,6 +1,6 @@
 # 📋 Relatório Técnico de Engenharia — Benchmark Apache Kafka
 
-Este documento detalha os objetivos, a metodologia e os resultados obtidos em cada uma das 5 etapas do benchmarking do **Apache Kafka (Modo KRaft)**. O propósito deste relatório é fornecer a qualquer desenvolvedor do time uma compreensão clara e prática sobre como o Kafka se comporta sob diferentes padrões de mensageria, resiliência a falhas e volumetria de dados.
+> Este documento detalha os objetivos, a metodologia e os resultados obtidos em cada uma das 5 etapas do benchmarking do **Apache Kafka (Modo KRaft)**. O propósito deste relatório é fornecer a qualquer desenvolvedor do time uma compreensão clara e prática sobre como o Kafka se comporta sob diferentes padrões de mensageria, resiliência a falhas e volumetria de dados.
 
 ---
 
@@ -157,7 +157,7 @@ Etapa 1 executada com sucesso!
 
 ### 1. Relevância Crítica do `auto.offset.reset: earliest`
 
->[!NOTE] No Apache Kafka, se um novo *Consumer Group* for inicializado **após** a publicação de uma mensagem sem a configuração explícita de `auto.offset.reset: earliest`, o cliente adotará por padrão a estratégia `latest`. Nesse cenário, o consumidor posiciona seu ponteiro no final atual da partição (*High Watermark*) e aguarda apenas eventos futuros, ignorando completamente todo o histórico prévio. O uso de `earliest` garante a leitura determinística a partir do offset `0`.
+> [!NOTE] No Apache Kafka, se um novo *Consumer Group* for inicializado **após** a publicação de uma mensagem sem a configuração explícita de `auto.offset.reset: earliest`, o cliente adotará por padrão a estratégia `latest`. Nesse cenário, o consumidor posiciona seu ponteiro no final atual da partição (*High Watermark*) e aguarda apenas eventos futuros, ignorando completamente todo o histórico prévio. O uso de `earliest` garante a leitura determinística a partir do offset `0`.
 
 ### 2. Injeção de Rastreabilidade nos Metadados (Headers Nativos)
 
