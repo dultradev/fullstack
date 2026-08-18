@@ -100,9 +100,12 @@ services:
 
 
 ### O que esta etapa busca comprovar?
-1. **Comunicação Básica e Integridade de Payload**: Enviar 1 mensagem do dataset `smoke.ndjson` e garantir que o corpo da mensagem chegue ao consumidor exatamente como foi publicado, sem ser alterado por conversões JSON no caminho.
-2. **Propagação de Rastreabilidade**: Comprovar que informações de observabilidade (`trace_id` e `ts_publicacao`) podem trafegar nos cabeçalhos nativos (*headers*) do broker, sem poluir o corpo do payload de negócio.
-3. **Cursor de Leitura Inicial (`auto.offset.reset: earliest`)**: Mostrar que, se um consumidor subir após a mensagem ter sido publicada, ele precisa da diretiva `earliest` para ler o histórico desde o início do tópico (offset 0), evitando iniciar do fim da fila e perder eventos.
+1. **Comunicação Básica e Integridade de Payload**: 
+- Enviar 1 mensagem do dataset `smoke.ndjson` e garantir que o corpo da mensagem chegue ao consumidor exatamente como foi publicado, sem ser alterado por conversões JSON no caminho.
+2. **Propagação de Rastreabilidade**: 
+- Comprovar que informações de observabilidade (`trace_id` e `ts_publicacao`) podem trafegar nos cabeçalhos nativos (*headers*) do broker, sem poluir o corpo do payload de negócio.
+3. **Cursor de Leitura Inicial (`auto.offset.reset: earliest`)**: 
+- Mostrar que, se um consumidor subir após a mensagem ter sido publicada, ele precisa da diretiva `earliest` para ler o histórico desde o início do tópico (offset 0), evitando iniciar do fim da fila e perder eventos.
 
 ## 1. Registro no terminal
 
@@ -157,7 +160,8 @@ Etapa 1 executada com sucesso!
 
 ### 1. Relevância Crítica do `auto.offset.reset: earliest`
 
-> [!NOTE]
+> [!NOTE] 
+> 
 > No Apache Kafka, se um novo *Consumer Group* for inicializado **após** a publicação de uma mensagem sem a configuração explícita de `auto.offset.reset: earliest`, o cliente adotará por padrão a estratégia `latest`. Nesse cenário, o consumidor posiciona seu ponteiro no final atual da partição (*High Watermark*) e aguarda apenas eventos futuros, ignorando completamente todo o histórico prévio. O uso de `earliest` garante a leitura determinística a partir do offset `0`.
 
 ### 2. Injeção de Rastreabilidade nos Metadados (Headers Nativos)
@@ -169,9 +173,12 @@ Etapa 1 executada com sucesso!
 ## 🔹 Etapa 2: Work Queues (Distribuição de Carga e Ordenação)
 
 ###  O que esta etapa busca comprovar?
-1. **Paralelismo com Consumer Groups**: Comprovar que 4 consumidores no mesmo grupo conseguem dividir o trabalho de 1.000.000 de mensagens distribuídas em 4 partições.
-2. **Garantia Estrita de Ordem por Chave**: Ao utilizar `entity_id` como chave de partição, todas as mensagens da mesma entidade devem cair sempre na mesma partição. Isso garante que nenhum consumidor veja eventos de uma entidade fora de ordem (`ordem_por_trilha_violada == 0`).
-3. **Sub-teste A (Consumidor Travado)**: Simular o travamento de um consumidor por 30 segundos no meio da execução para avaliar a queda momentânea de vazão e o comportamento do rebalanceamento.
+1. **Paralelismo com Consumer Groups**: 
+- Comprovar que 4 consumidores no mesmo grupo conseguem dividir o trabalho de 1.000.000 de mensagens distribuídas em 4 partições.
+2. **Garantia Estrita de Ordem por Chave**: 
+- Ao utilizar `entity_id` como chave de partição, todas as mensagens da mesma entidade devem cair sempre na mesma partição. Isso garante que nenhum consumidor veja eventos de uma entidade fora de ordem (`ordem_por_trilha_violada == 0`).
+3. **Sub-teste A (Consumidor Travado)**: 
+- Simular o travamento de um consumidor por 30 segundos no meio da execução para avaliar a queda momentânea de vazão e o comportamento do rebalanceamento.
 4. **Sub-teste B (Distribuição)**: Verificar se a dispersão do hashing por chave distribui as mensagens de maneira equilibrada entre as partições físicas.
 
 ---
@@ -182,7 +189,8 @@ Etapa 1 executada com sucesso!
 
 
 ### Segunda repetição
-> [!NOTE]: A repetição 1 serviu como aquecimento de caches do sistema de arquivos e JVM, tendo seus artefatos sobrescritos pela rodada oficial (Repetição 2).
+> [!NOTE]
+> A repetição 1 serviu como aquecimento de caches do sistema de arquivos e JVM, tendo seus artefatos sobrescritos pela rodada oficial (Repetição 2).
 
 
 
@@ -231,7 +239,7 @@ VALIDO — resultado bate com o gabarito.
 ```
 
 
-
+/
 
 ### Subteste A
 
@@ -289,6 +297,8 @@ VALIDO — resultado bate com o gabarito.
 ---
 
 ## 2. Resultados Consolidados
+
+
 
 ### Tabela Comparativa de Métricas
 
@@ -391,9 +401,12 @@ Ambos os testes geraram exatamente o digest de validação esperado (`e855c15e31
 * **Garantia de Durabilidade**: `acks=all`, confirmação manual de commits (sem auto-commit).
 
 ### O que esta etapa busca comprovar?
-1. **Fan-Out sem Multiplicação de Armazenamento**: Provar que múltiplos sistemas (Consumer Groups diferentes) podem assinar o mesmo tópico sem multiplicar o espaço em disco do broker.
-2. **Consumidor Tardio (*Late Consumer*)**: Publicar 1 milhão de mensagens com apenas 3 grupos ativos e, somente após o fim do envio, subir um 4º grupo do zero com `earliest`. Ele deve recuperar todo o histórico com 100% de integridade.
-3. **Sub-teste de Versionamento**: Provar que um consumidor programado na versão 1 de um contrato de dados é capaz de processar um payload na versão 2 (com novos campos) sem falhas de desserialização (*backward compatibility*).
+1. **Fan-Out sem Multiplicação de Armazenamento**: 
+- Provar que múltiplos sistemas (Consumer Groups diferentes) podem assinar o mesmo tópico sem multiplicar o espaço em disco do broker.
+2. **Consumidor Tardio (*Late Consumer*)**: 
+- Publicar 1 milhão de mensagens com apenas 3 grupos ativos e, somente após o fim do envio, subir um 4º grupo do zero com `earliest`. Ele deve recuperar todo o histórico com 100% de integridade.
+3. **Sub-teste de Versionamento**: 
+- Provar que um consumidor programado na versão 1 de um contrato de dados é capaz de processar um payload na versão 2 (com novos campos) sem falhas de desserialização (*backward compatibility*).
 
 ## 1. Registros no terminal
  
@@ -650,14 +663,16 @@ Todos os 4 grupos atingiram 100% de conformidade com o gabarito oficial (`dados/
 
 
 * **Cenários Testados**:
-* **Rodada 1 (Volume Médio)**: Predicado `categoria == 'A'` (~25% do dataset).
+  * **Rodada 1 (Volume Médio)**: Predicado `categoria == 'A'` (~25% do dataset).
 
 
-* **Rodada 2 (Volume de Nicho / Baixa Seletividade)**: Predicado `status == 'cancelado'` (~2% do dataset).
+  * **Rodada 2 (Volume de Nicho / Baixa Seletividade)**: Predicado `status == 'cancelado'` (~2% do dataset).
 
 ### O que esta etapa busca comprovar?
-1. **Comportamento de Filtragem do Kafka**: O Apache Kafka **não filtra conteúdo no servidor**. Ele entrega o fluxo completo de mensagens pela rede e a aplicação consumidora precisa descartar em memória o que não interessa (*client-side filtering*).
-2. **Sobrecarga de Tráfego de Rede**: Medir a relação entre os bytes físicos transmitidos na rede (`bytes_trafegados`) e os bytes efetivamente aproveitados pela aplicação (`bytes_uteis`) em dois cenários:
+1. **Comportamento de Filtragem do Kafka**: 
+- O Apache Kafka **não filtra conteúdo no servidor**. Ele entrega o fluxo completo de mensagens pela rede e a aplicação consumidora precisa descartar em memória o que não interessa (*client-side filtering*).
+2. **Sobrecarga de Tráfego de Rede**: 
+- Medir a relação entre os bytes físicos transmitidos na rede (`bytes_trafegados`) e os bytes efetivamente aproveitados pela aplicação (`bytes_uteis`) em dois cenários:
    * **Rodada 1 (Média Seletividade)**: Filtrar por `categoria == 'A'` (~25% do volume).
    * **Rodada 2 (Alta Seletividade / Nicho)**: Filtrar por `status == 'cancelado'` (~2% do volume).
 
@@ -851,6 +866,7 @@ VALIDO — resultado bate com o gabarito.
   * *Tópicos Dedicados*: Criar tópicos separados (ex: `pedidos-cancelados`) no produtor evita desperdício de rede, mas aumenta o número de tópicos e partições a serem gerenciados.
   * *Stream Processing (Kafka Streams/Flink)*: Permite criar tópicos derivados filtrados, porém introduz um componente extra e gera duplo tráfego de I/O (leitura e re-escrita no broker).
 
+
 ---
 
 ## 3. Análise de Eficiência de Rede e Desperdício de Banda
@@ -919,19 +935,18 @@ As duas rodadas foram auditadas pelos validadores oficiais (`full.gabarito.filtr
 
 
 ### O que esta etapa busca comprovar?
-1. **Absorção de Backlog Massivo**: Publicar quase 2,5 milhões de mensagens (`backlog.ndjson` ~800 MB) com os consumidores desligados, medindo se o broker sofre exaustão de memória ou se o produtor é bloqueado.
-2. **Recuperação de Desastre e RPO = 0**: Derrubar o contêiner do broker de forma bruta (`docker kill` via SIGKILL) no meio do fluxo e provar que, após o reinício, **zero mensagens confirmadas são perdidas** (`mensagens_perdidas == 0`).
-3. **Capacidade de Replay Histórico**: Resetar os ponteiros de offset de um grupo existente de volta ao início (`--to-earliest`) e reprocessar o conjunto de dados completo sem precisar que o produtor reenvie os dados.
+1. **Absorção de Backlog Massivo**: 
+- Publicar quase 2,5 milhões de mensagens (`backlog.ndjson` ~800 MB) com os consumidores desligados, medindo se o broker sofre exaustão de memória ou se o produtor é bloqueado.
+2. **Recuperação de Desastre e RPO = 0**: 
+- Derrubar o contêiner do broker de forma bruta (`docker kill` via SIGKILL) no meio do fluxo e provar que, após o reinício, **zero mensagens confirmadas são perdidas** (`mensagens_perdidas == 0`).
+3. **Capacidade de Replay Histórico**: 
+- Resetar os ponteiros de offset de um grupo existente de volta ao início (`--to-earliest`) e reprocessar o conjunto de dados completo sem precisar que o produtor reenvie os dados.
 
-
-
-
-```
 
 ```
                    [ Comportamento sob Falha Crítica ]
 
-```
+
 
 [ 1M Mensagens em Voo ] ──► [ Broker Kafka ] (acks=all)
 │
@@ -1165,7 +1180,7 @@ VALIDO — resultado bate com o gabarito.
 
 ### 3.2. Resiliência a Falhas Críticas e Garantia de RPO = 0
 
-* **Queda Abrupta via `SIGKILL**`: O contêiner foi encerrado sem encerramento gracioso (*graceful shutdown*) enquanto continha 1.000.000 de mensagens persistidas não consumidas.
+* **Queda Abrupta via `SIGKILL`:** O contêiner foi encerrado sem encerramento gracioso (*graceful shutdown*) enquanto continha 1.000.000 de mensagens persistidas não consumidas.
 * **Tempo de Failover e Inicialização do KRaft**: O broker restabeleceu a disponibilidade e a API de metadados em **14,319 segundos**. O processo de recuperação do KRaft inspecionou os segmentos de log, validou os índices e restabeleceu os tópicos sem corrupção.
 * **Auditoria de Perda de Dados (RPO)**: A reconciliação pós-recovery com o gabarito oficial confirmou **`mensagens_perdidas: 0`**, sem alterações no digest (`e855c15e316fa5bb`) e com integridade total de ordenação (`ordem_por_trilha_violada: 0`), comprovando que o modo `acks=all` garantiu durabilidade estrita.
 
@@ -1200,7 +1215,9 @@ grupo-replay     replay-full      3          0
 
 ```
 
->[!IMPORTANT] **Requisito Operacional**: Todos os membros do Consumer Group (`grupo-replay`) devem estar temporariamente desligados durante o comando de reset para que a reatribuição dos offsets seja aplicada com sucesso pelo Group Coordinator.
+>[!IMPORTANT] 
+> 
+> **Requisito Operacional**: Todos os membros do Consumer Group (`grupo-replay`) devem estar temporariamente desligados durante o comando de reset para que a reatribuição dos offsets seja aplicada com sucesso pelo Group Coordinator.
 
 ---
 
