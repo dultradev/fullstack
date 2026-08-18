@@ -2,7 +2,8 @@
 
 ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
 <img src="https://cdn.simpleicons.org/apachekafka/white" alt="Apache Kafka Logo" width="40" height="40" />
-
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-00000000?style=for-the-badge&logo=apachekafka&logoColor=white)
+![Apache Kafka](https://img.shields.io/badge/-%20-00000000?style=flat&logo=apachekafka&logoColor=white)
 
 [![Broker](https://img.shields.io/badge/Broker-Apache%20Kafka%20(KRaft)-black?style=for-the-badge&logo=apachekafka)](https://kafka.apache.org/)
 [![Python](https://img.shields.io/badge/Client-confluent--kafka%20(librdkafka)-blue?style=for-the-badge&logo=python)](https://github.com/confluentinc/confluent-kafka-python)
