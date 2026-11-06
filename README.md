@@ -47,30 +47,30 @@ Para usar sua foto real, substitua o `src` da imagem em `src/components/sections
 kanban
     Todo
         [Implementar autenticação]
-            @issue: #12
+            @issue: 12
             @priority: High
             @assignee: rian
         [Configurar banco de dados]
-            @issue: #15
+            @issue: 15
             @priority: Medium
 
     In Progress
         [Desenvolver API REST]
-            @issue: #18
+            @issue: 18
             @priority: High
             @assignee: leonardo
         [Criar interface inicial]
-            @issue: #21
+            @issue: 21
             @priority: Medium
 
     In Review
         [Documentar endpoints]
-            @issue: #24
+            @issue: 24
             @priority: Low
 
     Done
         [Configurar repositório]
-            @issue: #01
+            @issue: 01
         [Definir arquitetura]
-            @issue: #05
+            @issue: 05
 ```
