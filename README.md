@@ -42,3 +42,14 @@ Para usar sua foto real, substitua o `src` da imagem em `src/components/sections
 1. Conectar repositório na Vercel.
 2. Configurar variáveis de ambiente.
 3. Deploy automático pela branch principal.
+
+```mermaid
+kanban
+  Todo
+    Tarefa 1
+    Tarefa 2
+  Em Progresso
+    Tarefa 3
+  Concluído
+    Tarefa 4
+```
