@@ -46,31 +46,17 @@ Para usar sua foto real, substitua o `src` da imagem em `src/components/sections
 ```mermaid
 kanban
     Todo
-        [Implementar autenticação]
-            @issue: 12
-            @priority: High
-            @assignee: rian
-        [Configurar banco de dados]
-            @issue: 15
-            @priority: Medium
+        auth[Implementar autenticação]@{ ticket: 12, priority: 'High', assigned: 'rian' }
+        database[Configurar banco de dados]@{ ticket: 15, priority: 'Low' }
 
     In Progress
-        [Desenvolver API REST]
-            @issue: 18
-            @priority: High
-            @assignee: leonardo
-        [Criar interface inicial]
-            @issue: 21
-            @priority: Medium
+        api[Desenvolver API REST]@{ ticket: 18, priority: 'High', assigned: 'leonardo' }
+        interface[Criar interface inicial]@{ ticket: 21, priority: 'Low' }
 
     In Review
-        [Documentar endpoints]
-            @issue: 24
-            @priority: Low
+        docs[Documentar endpoints]@{ ticket: 24, priority: 'Low' }
 
     Done
-        [Configurar repositório]
-            @issue: 01
-        [Definir arquitetura]
-            @issue: 05
+        repository[Configurar repositório]@{ ticket: 1 }
+        architecture[Definir arquitetura]@{ ticket: 5 }
 ```
